@@ -1,0 +1,113 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .slider {
+      width: 50%;
+      margin: 100px auto;
+  }
+
+  .slick-slide {
+    margin: 0px 20px;
+  }
+
+  .slick-slide img {
+    width: 100%;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+
+
+  .slick-slide {
+    transition: all ease-in-out .3s;
+  }
+
+  .nav-item {
+    padding: 0px 30px;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #000000;
+  }
+.kaka{
+  background-color: #000000;
+}
+
+
+  .h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .h1 a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .buttom {
+    width: 350px;
+    margin: auto;
+    margin-top: 60px;
+  }
+  .block {
+    background-color: #ddc53f;
+  }
+
+
+  .slide {
+    padding-top: 10px;
+  }
+
+  .text {
+    padding-top: 20px;
+  }
+
+  .footer {
+    background-color: #000000;
+  }
+
+  .row {
+    padding-top: 60px;
+    margin: auto;
+  }
+
+  .navbar-toggler {
+    margin-left: 70px;
+  }
+  h2{
+    margin-left:220px;
+    padding-top:70px;
+  }
+ /* cach */
+ .slide{
+   margin-top:-20px;
+ }
+ .text{
+  text-align: justify;
+ }
+ .font-bold{
+      padding-top: 100px;
+      font-weight: normal;
+      text-align:center;
+  }
+  .col-xl-4{
+    padding-top: 25px;
+  } 
+  .pb-4{
+      text-align: justify;
+  }
+  .variable {
+    width: 1100px;
+ }
+ p{
+    text-align: center;
+ 
+}
+.service{
+    color: #666464;
+    font-size: 16px;
+}
