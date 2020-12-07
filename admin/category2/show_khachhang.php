@@ -13,7 +13,7 @@
          <!--card-header-->      
      <?php
      try{
-         $stmt = $objConn->prepare("SELECT * FROM khach_hang ORDER BY id DESC");
+         $stmt = $objConn->prepare("SELECT * FROM khach_hang ORDER BY id_kh DESC");
         // thực thi câu lệnh
         $stmt->execute();
         // thiết lập chế ddojj assoc
@@ -25,9 +25,9 @@
         <tr><th>ID_khach-hang</th><th>Tên_kh</th><th>SĐT</th><th>Update</th><th>Delete</th></tr>";
 
         foreach($mang as $rows){
-            $link_update = '?page=khach-hang&action=update&id='.$rows['id'];
-            $link_del = '?page=khach-hang&action=del&id='.$rows['id'];
-            echo "<tr> <td>{$rows['id']}</td> <td>{$rows['ten_khach_hang']}</td> <td>{$rows['SDT']}</td> 
+            $link_update = '?page=khach-hang&action=update&id='.$rows['id_kh'];
+            $link_del = '?page=khach-hang&action=del&id='.$rows['id_kh'];
+            echo "<tr> <td>{$rows['id_kh']}</td> <td>{$rows['ten_khach_hang']}</td> <td>{$rows['SDT']}</td> 
             <td><a href = '$link_update' class = 'btn btn-success'>Update</a></td> <td><a href = '$link_del' class = 'btn btn-danger'>Delete</a></td></tr>";
         }
            

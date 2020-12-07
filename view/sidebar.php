@@ -9,7 +9,7 @@
       
       <div class="carousel-inner">
       <?php
-        $stmt = $objConn->prepare("SELECT * FROM slide ORDER BY ma_slide ASC");
+        $stmt = $objConn->prepare("SELECT * FROM slide ORDER BY id ASC");
         $stmt->execute();
          // thiết lập chế độ lấy dữ liệu dạng assoc
         // để mảng dữ liệu trả về có key là tên cột trong bảng
@@ -49,7 +49,7 @@
   <div class="big container">
       <div class="row" style="margin-top: 20px;">
       <?php
-       $stmt = $objConn->prepare("SELECT * FROM dich_vu ORDER BY ma_dv DESC");
+       $stmt = $objConn->prepare("SELECT * FROM dich_vu ORDER BY id DESC");
        $stmt->execute();
        $stmt->setFetchMode(PDO::FETCH_ASSOC);
        $result = $stmt->fetchAll();
@@ -68,7 +68,7 @@
     <h1 class="font-bold">Mẫu tóc Barber</h1>
     <section class="variable slider">
       <?php  
-      $stmt = $objConn->prepare("SELECT * FROM bai_viet ORDER BY stt DESC");
+      $stmt = $objConn->prepare("SELECT * FROM bai_viet ORDER BY id DESC");
       $stmt->execute();
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
       $mang = $stmt->fetchAll();

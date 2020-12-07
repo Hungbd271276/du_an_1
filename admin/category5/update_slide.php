@@ -1,7 +1,7 @@
 <?php
 try{
-  $stmt = $objConn->prepare("SELECT * FROM slide WHERE 	ma_slide =:get_ma_slide");
-  $stmt->bindParam(":get_ma_slide",$_GET['id']);
+  $stmt = $objConn->prepare("SELECT * FROM slide WHERE 	id =:get_id");
+  $stmt->bindParam(":get_id",$_GET['id']);
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   
@@ -54,13 +54,13 @@ try{
           // Người dùng nhập hợp lệ
           // tiếp hành truy vấn update
           $sql = "UPDATE slide SET ten_slide=:post_ten_slide, ngay_dang=:post_ngay_dang, anh_slide=:post_anh_slide ";
-          $sql .= " WHERE ma_slide = :get_ma_slide";
+          $sql .= " WHERE id = :get_id";
            echo "<br> Câu lệnh SQL:" , $sql;
               $stmt = $objConn->prepare($sql);
               $stmt->bindParam(":post_ten_slide",$ten_slide);
               $stmt->bindParam(":post_ngay_dang",$ngay_dang);
               $stmt->bindParam(":post_anh_slide",$image_url);
-              $stmt->bindParam(":get_ma_slide",$_GET['id']);
+              $stmt->bindParam(":get_id",$_GET['id']);
               $stmt->execute();
               // chuyển trang
               header("Location:?page=slide");

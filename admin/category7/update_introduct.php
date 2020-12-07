@@ -1,7 +1,7 @@
 <?php
  try{
-    $stmt = $objConn->prepare("SELECT * FROM gioi_thieu WHERE id_bv =:get_id_bv");
-    $stmt->bindParam(":get_id_bv",$_GET['id']);
+    $stmt = $objConn->prepare("SELECT * FROM gioi_thieu WHERE id =:get_id");
+    $stmt->bindParam(":get_id",$_GET['id']);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     
@@ -52,13 +52,13 @@
             // Người dùng nhập hợp lệ
             // tiếp hành truy vấn update
             $sql = "UPDATE gioi_thieu SET tieu_de=:post_tieu_de, images=:post_images, content=:post_content";
-            $sql .= " WHERE id_bv = :get_id_bv";
+            $sql .= " WHERE id = :get_id";
              echo "<br> Câu lệnh SQL:" , $sql;
                 $stmt = $objConn->prepare($sql);
                 $stmt->bindParam(":post_tieu_de",$ten_bv);
                 $stmt->bindParam(":post_images",$image_url);
                 $stmt->bindParam(":post_content",$chi_tiet);
-                $stmt->bindParam(":get_id_bv",$_GET['id']);
+                $stmt->bindParam(":get_id",$_GET['id']);
                 $stmt->execute();
                 // chuyển trang
                 header("Location:?page=introduct");

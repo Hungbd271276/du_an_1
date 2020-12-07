@@ -1,7 +1,7 @@
 <?php
 try{
-$stmt = $objConn->prepare("SELECT * FROM dich_vu WHERE ma_dv =:get_ma_dv");
-$stmt->bindParam(":get_ma_dv",$_GET['id']);
+$stmt = $objConn->prepare("SELECT * FROM dich_vu WHERE id =:get_id");
+$stmt->bindParam(":get_id",$_GET['id']);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -58,14 +58,14 @@ if(isset($_POST['btnSave'])){
         // Người dùng nhập hợp lệ
         // tiếp hành truy vấn update
         $sql = "UPDATE dich_vu SET ten_dv=:post_ten_dv, gia=:post_gia, images=:post_images ,chi_tiet=:post_chi_tiet";
-        $sql .= " WHERE ma_dv = :get_ma_dv";
+        $sql .= " WHERE id = :get_id";
          echo "<br> Câu lệnh SQL:" , $sql;
             $stmt = $objConn->prepare($sql);
             $stmt->bindParam(":post_ten_dv",$ten_dv);
             $stmt->bindParam(":post_gia",$gia);
             $stmt->bindParam(":post_chi_tiet",$chi_tiet);
             $stmt->bindParam(":post_images",$image_url);
-            $stmt->bindParam(":get_ma_dv",$_GET['id']);
+            $stmt->bindParam(":get_id",$_GET['id']);
             $stmt->execute();
             // chuyển trang
             header("Location:?page=dich-vu");

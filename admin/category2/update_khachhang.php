@@ -1,7 +1,7 @@
 <?php
  try{
-   $stmt = $objConn->prepare("SELECT * FROM khach_hang WHERE id=:get_id");
-   $stmt->bindParam(':get_id',$_GET['id']);
+   $stmt = $objConn->prepare("SELECT * FROM khach_hang WHERE id_kh =:get_id_kh");
+   $stmt->bindParam(':get_id_kh',$_GET['id']);
    $stmt->execute(); 
    $stmt->setFetchMode(PDO::FETCH_ASSOC);
    $row = $stmt->fetch();
@@ -29,12 +29,12 @@
         // Người dùng nhập hợp lệ
         // tiếp hành truy vấn update
         $sql = "UPDATE  khach_hang SET ten_khach_hang=:post_ten_khach_hang, SDT=:post_SDT ";
-        $sql .= " WHERE id = :get_id";
+        $sql .= " WHERE id_kh = :get_id_kh";
          echo "<br> Câu lệnh SQL:" , $sql;
             $stmt = $objConn->prepare($sql);
             $stmt->bindParam(":post_ten_khach_hang",$ten_kh);
             $stmt->bindParam(":post_SDT",$sdt);
-            $stmt->bindParam(":get_id",$_GET['id']);
+            $stmt->bindParam(":get_id_kh",$_GET['id']);
             $stmt->execute();
             // chuyển trang
             header("Location:?page=khach-hang");

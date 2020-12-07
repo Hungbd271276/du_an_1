@@ -13,7 +13,7 @@
          <!--card-header-->    
    <?php
       try{
-        $stmt = $objConn->prepare("SELECT * FROM bai_viet ORDER BY stt DESC");
+        $stmt = $objConn->prepare("SELECT * FROM bai_viet ORDER BY id DESC");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $mang = $stmt->fetchAll();
@@ -23,9 +23,9 @@
         
          foreach($mang as $row){
             $link_avt = '../admin/'.$row['images'];
-            $link_update = "?page=bai-viet&action=update&id=".$row['stt'];
-            $link_del = "?page=bai-viet&action=del&id=".$row['stt']; 
-            echo "<tr> <td>{$row['stt']}</td> <td>{$row['ten_bai_viet']}</td>  <td><img src = '$link_avt' width='70px'/></> <td>{$row['chi_tiet']}</td>
+            $link_update = "?page=bai-viet&action=update&id=".$row['id'];
+            $link_del = "?page=bai-viet&action=del&id=".$row['id']; 
+            echo "<tr> <td>{$row['id']}</td> <td>{$row['ten_bai_viet']}</td>  <td><img src = '$link_avt' width='70px'/></> <td>{$row['chi_tiet']}</td>
             <td><a href = '$link_update' class = 'btn btn-success'>Update</a></td> <td><a href = '$link_del' class = 'btn btn-danger'>Delete</a></td> </tr>";
          }
 

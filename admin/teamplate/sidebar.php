@@ -59,7 +59,7 @@
                 </li>
                 <li>
                     <a href="?page=introduct">
-                        <i class="pe-7s-map-marker"></i>
+                    <i class="pe-7s-note2"></i>
                         <p>Giới thiệu</p>
                     </a>
                 </li>

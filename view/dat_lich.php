@@ -1,6 +1,6 @@
 <?php
  try{
-  $stmt = $objConn->prepare("SELECT * FROM dich_vu ORDER BY ma_dv DESC");
+  $stmt = $objConn->prepare("SELECT * FROM dich_vu ORDER BY id DESC");
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $mang = $stmt->fetchAll();
