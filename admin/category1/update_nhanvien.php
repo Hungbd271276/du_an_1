@@ -1,5 +1,4 @@
 <?php
- try{ 
     $stmt=$objConn->prepare("SELECT * FROM nhan_vien WHERE id_nv = :get_id_nv");
     $stmt->bindParam(":get_id_nv",$_GET['id']);
     $stmt->execute();
@@ -9,10 +8,6 @@
         echo "Không tồn tại ID = ".$_GET['id'];
         return;
     }
-}catch(PDOException $e){
-    echo 'Lỗi truy vấn cơ sở dữ liệu'.$e->getMessage();
-}
-
 $msg = "";
 $err = [];
 if(isset($_POST['btnSave'])){

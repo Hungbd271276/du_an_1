@@ -55,6 +55,7 @@
       <!--end-nav-->
       <div class="login">
         <a href="login.php"><input class="btn btn-primary" type="button" value="Đăng nhập"></a>
+        <a href="?abc=xem-lich"><input class="btn btn-primary" type="button" value="Xem lịch đặt"></a>
       </div>
     </div>
 </header>

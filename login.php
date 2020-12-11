@@ -64,6 +64,7 @@ if(empty($err)){
                <input type="password" name="pass" placeholder="Enter Password">
                <input type="submit" name="btnLogin" value="login">
                <a href="Registration.php">Đăng ký tài khoản tại đây</a><br>
+               <a href="index.php">come back</a>
           </form>
      </div>
 </body>

@@ -22,6 +22,9 @@
       case 'introduct':
         include_once 'view/introduct.php';
       break;
+      case 'xem-lich':
+        include_once 'view/xem_lich.php';
+      break;
     }
   }else{
     require_once "view/sidebar.php";

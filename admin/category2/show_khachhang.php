@@ -11,36 +11,42 @@
                             </div>
                             <div class="content table-responsive table-full-width">
          <!--card-header-->      
-     <?php
-     try{
-         $stmt = $objConn->prepare("SELECT * FROM khach_hang ORDER BY id_kh DESC");
-        // thực thi câu lệnh
-        $stmt->execute();
-        // thiết lập chế ddojj assoc
-        // thiết lập chế độ này sẽ trả về dạng mảng sẽ có tên cột trong bảng dữ liệu trỏ tới dữ liệu
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $mang = $stmt->fetchAll();
-
-        echo "<table class = 'table table-hover table-striped'>
-        <tr><th>ID_khach-hang</th><th>Tên_kh</th><th>SĐT</th><th>Update</th><th>Delete</th></tr>";
-
-        foreach($mang as $rows){
-            $link_update = '?page=khach-hang&action=update&id='.$rows['id_kh'];
-            $link_del = '?page=khach-hang&action=del&id='.$rows['id_kh'];
-            echo "<tr> <td>{$rows['id_kh']}</td> <td>{$rows['ten_khach_hang']}</td> <td>{$rows['SDT']}</td> 
-            <td><a href = '$link_update' class = 'btn btn-success'>Update</a></td> <td><a href = '$link_del' class = 'btn btn-danger'>Delete</a></td></tr>";
-        }
-           
-        echo '</table>';
-     }catch(PDOEXception $e){
-        echo 'Lỗi truy vấn cơ sở dữ liệu'.$e->getMessage();
-     }
-     
-
-
-     ?>
-
-
+    <div class = "card-body">
+    <table class = "table table-hover table-striped">
+         <tr>
+            <th>ID_khach-hang</th>
+            <th>Tên_kh</th>
+            <th>SĐT</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+         <tbody>
+                <?php
+                  $stmt = $objConn->prepare("SELECT * FROM khach_hang ORDER BY id_kh DESC");
+                  // thực thi câu lệnh
+                  $stmt->execute();
+                  // thiết lập chế ddojj assoc
+                  // thiết lập chế độ này sẽ trả về dạng mảng sẽ có tên cột trong bảng dữ liệu trỏ tới dữ liệu
+                  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                  $mang = $stmt->fetchAll();
+                   foreach($mang as $rows){
+                ?>
+    <tr>
+        <td><?php echo $rows['id_kh'] ?></td>
+        <td><?php echo $rows['ten_khach_hang'] ?></td>
+        <td><?php echo $rows['SDT'] ?></td>
+        <td><a href = "?page=khach-hang&action=update&id=<?php echo $rows['id_kh'] ?>"
+        class = 'btn btn-success'>Edit</a></td> 
+        <td><a href = "?page=khach-hang&action=del&id=<?php echo $rows['id_kh'] 
+             ?>"onClick = "return confirm('Bạn có thực sự muốn xóa không')"
+             class="btn btn-info">Delete</a></td>
+    </tr>
+                <?php
+                   }
+                ?>
+         </tbody>
+    </table>
+    </div>
 
  </div>
      </div>

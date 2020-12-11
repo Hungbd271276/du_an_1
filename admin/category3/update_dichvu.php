@@ -1,5 +1,4 @@
 <?php
-try{
 $stmt = $objConn->prepare("SELECT * FROM dich_vu WHERE id =:get_id");
 $stmt->bindParam(":get_id",$_GET['id']);
 $stmt->execute();
@@ -10,12 +9,6 @@ if(empty($row)){
     echo "Không tồn tại user có ID = ".$_GET['id'];
     return;
 }
-
-// xuống đến đây thì có dữ liệu, không làm gì mà xuống gắn vào form
-}catch(PDOException $e){
-   echo "Lỗi không lấy được dữ liệu: " . $e->getMessage();
-} 
-
 //-------Tiến hành xử lý sự kiện bấm nút lưu dữ liệu ở dưới đây
 // 1: Thu nhận dữ liệu 
 // 2: Kiểm tra hộ lệ

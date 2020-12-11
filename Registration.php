@@ -71,6 +71,7 @@ require_once "database/db.php";
                <p>Họ tên</p>
                <input type="text" name="name" placeholder="Enter Họ tên">
                <input type="submit" name="btnSubmit" value="Submit">
+               <a href="login.php">Quay lại login</a><br>
           </form>
      </div>
 </body>

@@ -78,8 +78,15 @@ if(isset($_POST['btnSave'])){
          <label for="exampleInputEmail1">Giờ hẹn</label>
          <input type="text" name = "gio_hen" class="form-control" id="exampleInputEmail1" ><br>
 
-         
          <label for="exampleInputEmail1">Ngày hẹn</label>
+         <input type="text" name = "ngay_hen" class="form-control" id="exampleInputEmail1" ><br>
+
+         
+         <label for="exampleInputEmail1">Dịch vụ</label>
+         <input type="text" name = "ngay_hen" class="form-control" id="exampleInputEmail1" ><br>
+
+         
+         <label for="exampleInputEmail1">Status</label>
          <input type="text" name = "ngay_hen" class="form-control" id="exampleInputEmail1" ><br>
              </div>    
          <a href=""><input type= "submit" name="btnSave" class="btn btn-success

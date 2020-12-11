@@ -1,21 +1,14 @@
 <?php
- try{
   $stmt = $objConn->prepare("SELECT * FROM dich_vu ORDER BY id DESC");
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $mang = $stmt->fetchAll();
-  }catch(PDOException $e){
-  echo 'Lỗi truy vấn cơ sở dữ liệu'.$e->getMessage();
-}
-try{
+
   $stmt = $objConn->prepare("SELECT * FROM nhan_vien ORDER BY id_nv  ASC");
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $result = $stmt->fetchAll();
-}catch(PDOException $e){
-  echo "<br> Lỗi truy vấn CSDL: " . $e->getMessage();
- } 
-
+ 
     $msg = '';
     $err = [];
     if(isset($_POST['btnSave'])){
@@ -90,7 +83,7 @@ body{
   }
  
 </style>
-<body>
+
 <h4><?php echo $msg ?></h4>
       <main>
         <div class="container">
@@ -158,5 +151,5 @@ body{
           </form>
         </div>
       </main>
-
+      <body>
  
